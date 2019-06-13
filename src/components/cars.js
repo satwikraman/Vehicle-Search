@@ -21,7 +21,6 @@ class cars extends React.Component{
 }
 const mapStateToProps=(state,ownProps)=>{
     let id=ownProps.match.params.p_id;
-    console.log(id)
     return{
         carData:state.data.find(res=>res.model ===id)
     }
