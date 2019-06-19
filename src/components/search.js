@@ -1,12 +1,12 @@
 import React from 'react'
 
-class search extends React.Component{
+class Search extends React.Component{
     state={
         value:''
     }
     handleClick=(e)=>{
         e.preventDefault();
-        this.props.history.push(`/${this.state.value}`)
+        this.props.searchModel(this.state.value)
     }
     render(){
         return(
@@ -16,7 +16,7 @@ class search extends React.Component{
                     <button className="btn btn-outline-secondary" onClick={this.handleClick} type="button">Button</button>
                 </div>
             </div>
-)
+        )
     }
 }
-export default search
+export default Search

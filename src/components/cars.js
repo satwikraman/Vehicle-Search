@@ -1,8 +1,8 @@
 import React from 'react'
-import {connect} from 'react-redux'
-class cars extends React.Component{
-    render(){
-        const car=this.props.carData
+
+export  const Cars =(props)=>{
+
+        const car=props.carData
         console.log(car.photoUrl)
     return(
         <div className="cars container" style={{ padding : '50px'}}>
@@ -17,12 +17,6 @@ class cars extends React.Component{
             </div>
         </div>
     )
+
 }
-}
-const mapStateToProps=(state,ownProps)=>{
-    let id=ownProps.match.params.p_id;
-    return{
-        carData:state.data.find(res=>res.model ===id)
-    }
-}
-export default connect(mapStateToProps)(cars)
+
