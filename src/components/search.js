@@ -6,7 +6,7 @@ class Search extends React.Component{
     }
     handleClick=(e)=>{
         e.preventDefault();
-        this.props.searchModel(this.state.value)
+        console.log(this.props)
     }
     render(){
         return(
