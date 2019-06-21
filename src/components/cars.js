@@ -1,10 +1,15 @@
 import React from 'react'
 
 export  const Cars =(props)=>{
-console.log(props.carData)
-        const car={props}
-        return  (car.length) ? (
-            
+    console.log()
+        const cars=props.carData.data
+        const model=props.match.params.p_id
+        let car=cars.filter(data=>{
+            return data.model===model
+        })
+        car=car[0];
+        console.log(car)
+        return  (car) ? (
                 <div className="cars container" style={{ padding : '50px'}}>
                     <div className="card center" >
                     <h4 style={{textAlign:'center'}}>{car.category} {car.year} {car.make} {car.model}</h4>
