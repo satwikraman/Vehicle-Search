@@ -1,11 +1,8 @@
 import React from 'react'
 
-export  const Cars =(props)=>{
-    console.log()
-        const cars=props.carData.data
-        const model=props.match.params.p_id
-        let car=cars.filter(data=>{
-            return data.model===model
+export  const Cars =(props)=>{ 
+        let car=props.carData.data.filter(data=>{
+            return data.model=== props.match.params.p_id
         })
         car=car[0];
         console.log(car)
