@@ -7,7 +7,7 @@ import {Cars} from './components/Cars'
 class  App extends React.Component {
   searchModel=(model)=>{
     console.log(model);
-
+    
     // this.props.history.push(`/${model}`)
   }
   render(){
@@ -21,16 +21,13 @@ class  App extends React.Component {
       </div>
     </BrowserRouter>
   );
-}
-}
-const mapStateToProps=(state,ownProps)=>{
-  let id
-  return{
-      carData:state.data.find(res=>res.model ===id)
-
   }
 }
-
- 
-
+const mapStateToProps=(state,ownProps)=>{
+  let id=ownProps.id
+  console.log(ownProps)
+  return{
+      carData:state.data.find(res=>res.model ===id)
+  }
+}
 export default connect(mapStateToProps)(App);
