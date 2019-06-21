@@ -6,9 +6,8 @@ class Search extends React.Component{
     }
     handleClick=(e)=>{
         e.preventDefault();
-    //    let id= this.props.match.params.p_id
-       this.props.searchModel(this.state.value)
-    this.props.history.push(`/${this.state.value}`)
+        this.props.searchModel(this.state.value)
+        this.props.history.push(`/${this.state.value}`)
 
     }
     render(){

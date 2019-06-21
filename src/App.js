@@ -5,10 +5,17 @@ import Search from './components/Search'
 import {Cars} from './components/Cars'
 
 class  App extends React.Component {
+constructor(props){
+  super(props);
+  this.state={
+    id:''
+  }
+}
   searchModel=(model)=>{
-    console.log(model);
-    
-    // this.props.history.push(`/${model}`)
+    let id=model
+    console.log(this.props)
+    console.log(this.setState({id:id}))
+    console.log(this.state)
   }
   render(){
   return (
@@ -16,18 +23,17 @@ class  App extends React.Component {
       <div className="App">
       <Switch>
         <Route exact path='/' render={(props)=> <Search  {...props}  searchModel={this.searchModel} />} />
-        <Route path='/:p_id' render={(props)=> <Cars {...props} carData={this.props.carData}/>}/>
-        </Switch>
+        <Route path='/:p_id' render={(props)=> <Cars {...props} carData={()=>{this.props.carData(this.state.id)}}/>}/>
+      </Switch>
       </div>
     </BrowserRouter>
   );
   }
 }
 const mapStateToProps=(state,ownProps)=>{
-  let id=ownProps.id
-  console.log(ownProps)
-  return{
-      carData:state.data.find(res=>res.model ===id)
+
+  return{ 
+    carData:(id)=>state.data.find(res=>res.model ===id)
   }
 }
 export default connect(mapStateToProps)(App);
