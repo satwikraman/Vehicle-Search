@@ -14,7 +14,8 @@ constructor(props){
   searchModel=(model)=>{
     let id=model
     console.log(this.props)
-    console.log(this.setState({id:id}))
+    this.state.id=model
+    console.log(this.state)
     console.log(this.state)
   }
   render(){

@@ -1,7 +1,7 @@
 import React from 'react'
 
 export  const Cars =(props)=>{
-
+console.log(props.carData)
         const car={props}
         return  (car.length) ? (
             
