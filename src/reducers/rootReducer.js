@@ -1,5 +1,5 @@
 
-const roorReducer=(state, action)=>{
+const roorReducer = (state, action) => {
     return state;
 }
 export default roorReducer
